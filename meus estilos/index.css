@@ -1,5 +1,6 @@
 body {
-    background-image: url(/imagens/teste.webp);
+    background: url(../imagens/background.jpg);
+    background-size: cover;
 }
 
 header {
@@ -34,14 +35,14 @@ header {
 
 /* Estilo para os campos */
 .login input{
-    padding: 10px;
+    padding: 8px;
     border: none;
     border-radius: 10px;
 }
 
 /* Botão com estilo opcional */
 .login button {
-    padding: 10px;
+    padding: 8px;
     border: none;
     border-radius: 5px;
     background-color: #1c7daa;
@@ -52,7 +53,7 @@ header {
 /* Texto opcional (Facebook) */
 .login .redes {
     border-radius: 9px;
-    background: url(/imagens/Facebook.png) left no-repeat;
+    background: url(../imagens/Facebook.png) left no-repeat;
     background-size: 27px;
     background-color: #3f67bc;
     padding-left: 32px;
@@ -64,4 +65,40 @@ header {
     border: none;
     cursor: pointer;
     transition: background-color .3s;
+}
+
+/* Garantir que o body e html tenham altura total */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Main ocupa 100% da tela */
+main {
+    height: 100vh;
+}
+
+/* Container com display flex e espaçamento */
+main .container {
+    display: flex;
+    justify-content: space-between; /* separa as imagens com espaço entre elas */
+    gap: 10px; /* espaçamento de 10px entre os itens */
+    height: 100%;
+    padding: 0 10px; /* opcional: margem lateral */
+    box-sizing: border-box;
+}
+
+/* Cada imagem ocupa 25% menos os gaps */
+main .video {
+    flex: 1; /* cada item ocupa espaço igual */
+    height: 100%;
+    position: relative;
+}
+
+/* As imagens se adaptam ao container */
+main .video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* garante que a imagem preencha sem distorcer */
+    display: block;
 }
