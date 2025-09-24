@@ -1,9 +1,12 @@
+body {
+    background-image: url(/imagens/teste.webp);
+}
 
 header {
     width: 60vw;
     height: 40px;
     margin: 0 auto;
-    background-color: #239dd6d1; /* azul com transparência */
+    background-color: #239dd6cb; /* azul com transparência */
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     padding: 5px;
