@@ -3,7 +3,7 @@ header {
     width: 60vw;
     height: 40px;
     margin: 0 auto;
-    background-color: rgba(65, 65, 143, 0.541); /* azul com transparência */
+    background-color: #239dd6d1; /* azul com transparência */
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     padding: 5px;
@@ -24,8 +24,9 @@ header {
 }
 
 .login h1 {
-    font-size: 16px;
-    color: aliceblue;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
 }
 
 /* Estilo para os campos */
@@ -40,14 +41,24 @@ header {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: blue;
+    background-color: #1c7daa;
     color: white;
     cursor: pointer;
 }
 
 /* Texto opcional (Facebook) */
-.login p {
-    margin: 0;
-    font-size: 14px;
-    color: #333;
+.login .redes {
+    border-radius: 9px;
+    background: url(/imagens/Facebook.png) left no-repeat;
+    background-size: 27px;
+    background-color: #3f67bc;
+    padding-left: 32px;
+    height: 27px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color .3s;
 }
