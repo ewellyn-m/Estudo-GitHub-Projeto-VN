@@ -106,6 +106,20 @@ main .video img {
     display: block;
 }
 
+main .container .video {
+  position: relative; /* garante que cada logo fique posicionada dentro de sua própria div */
+}
+
+main .container .video .logo {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px; /* ajuste esse tamanho como quiser */
+  height: auto;
+  z-index: 2;
+}
+
 footer {
   background: #239dd6 !important;
   display: flex;
