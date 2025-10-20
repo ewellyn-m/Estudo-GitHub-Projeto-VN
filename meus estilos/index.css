@@ -11,11 +11,11 @@ html, body {
 
 header {
     width: 60vw;
-    height: 40px;
+    height: 35px;
     margin: 0 auto;
     background-color: #239dd6cb; 
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     padding: 5px;
     position: fixed; 
     top: 0;
@@ -36,34 +36,104 @@ header {
 .login h1 {
     color: #fff;
     font-family:  "Arvo", serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
 }
 
+.login .inputHe {
+  padding: 0;
+  margin-left: 30px;
+}
 
 .login input{
-    padding: 8px;
+    font-family: "Arvo", serif;
+    font-size: 12px;
+    padding: 7px;
+    height: 15px;
+    width: 160px;
     border: none;
-    border-radius: 10px;
+    border-radius: 9px;
+    margin: 0;
+}
+
+.login input:focus {
+  outline: none;
+}
+
+/* container do input de senha + ícone */
+.senha-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* tooltip */
+.tooltip {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 15px;
+  color: white;               /* cor da interrogação */
+  background-color: #239dd6cb;  /* azul do fundo */
+  border-radius: 50%;         
+  width: 21px;                
+  height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.tooltip-text {
+  font-size: 13px;
+  font-weight: 100;
+  visibility: hidden;
+  width: max-content;
+  background-color: #ddb2c6;;
+  color: #fff;
+  height: 20px;
+  text-align: center;
+  padding: 5px 8px;
+  border-radius: 4px;
+  position: absolute;
+  top: 125%;           /* mudou de bottom para top */
+  right: 50%;
+  transform: translateX(50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }
 
 
 .login button {
+    min-width: 33px;
     font-family:  "Arvo", serif;
-    font-weight: bold;
-    padding: 8px;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 7px;
     border: none;
-    border-radius: 5px;
+    border-radius: 9px;
     background-color: #1c7daa;
     color: white;
     cursor: pointer;
+    margin-right: 10px;
+    transition: background-color .3s;
 }
 
+.login button:hover {
+  background-color: #239dd6;
+}
 
 .login .redes {
     border-radius: 9px;
-    background: url(../imagens/Facebook.png) left no-repeat;
-    background-size: 27px;
+    background: url(../imagens/logos/button-face) left no-repeat;
+    background-size: 25px;
     background-color: #3f67bc;
     padding-left: 32px;
     height: 27px;
@@ -122,15 +192,53 @@ main .container .video .logo {
 
 .log {
   position: absolute;
-  top: 78%; /* centraliza verticalmente */
-  left: 50%; /* centraliza horizontalmente */
-  transform: translate(-50%, -50%); /* ajusta para o centro exato */
-  z-index: 10; /* garante que fica acima das outras imagens */
+  top: 75.5%; /* posição vertical da imagem base */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 700px; /* tamanho da imagem base */
+  height: 190px;
 }
 
 .log img {
-  width: 700px; /* ajuste o tamanho da imagem */
-  height: 230;
+  position: absolute; /* permite sobreposição */
+}
+
+.log .logo-base {
+  width: 100%; /* ocupa toda a largura da .log */
+  height: 100%;
+  z-index: 1;
+}
+
+.log .logo-top {
+  width: 53%;        /* menor que a base */
+  height: auto;      /* mantém proporção */
+  top: -15px;         /* ajusta verticalmente dentro do container */
+  left: 45%;         /* centraliza sobre a base */
+  z-index: 2;        /* sobre a imagem de baixo */
+}
+
+/* Container das 3 imagens com links */
+.log .logo-links {
+  position: absolute;
+  bottom: 50px; /* posiciona abaixo da logo-base */
+  left: 65%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 120px; /* espaçamento entre as imagens */
+  z-index: 3; /* acima da logo-base, mas abaixo da logo-top se necessário */
+}
+
+/* Cada imagem do link */
+.log .logo-links img {
+  width: 100px;   /* ajuste o tamanho que quiser */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.log .logo-links img:hover {
+  transform: scale(1.1); /* efeito hover opcional */
 }
 
 footer {
@@ -143,7 +251,9 @@ footer {
   padding: 10px;
   gap: 5px;
   font-family: Arial, serif;
-  font-size: 12px;
+  font-size: 12.5px;
+  height: 9%;
+  gap: 10px;
 }
 
 footer .criacao {
@@ -157,9 +267,14 @@ footer .criacao p {
   margin: 0;         
 }
 
+footer .menu {
+  width: 80%;
+}
+
 footer .menu a{
     text-decoration: none;
     color: #fff;
+    margin-right: 12px; /* espaço à direita */
 }
 
 footer .site {
@@ -170,3 +285,4 @@ footer .site a {
     text-decoration: none;
     color: #fff;
 }
+
