@@ -196,6 +196,8 @@ main .container .video {
   position: relative; /* garante que cada logo fique posicionada dentro de sua própria div */
 }
 
+
+
 main .container .video .logo {
   position: absolute;
   top: 60px;
@@ -207,6 +209,124 @@ main .container .video .logo {
 
   max-width: 60%;
 }
+
+.video .overlay-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 3; /* acima da imagem e do overlay */
+}
+
+/* Mantém o container invisível até hover */
+.video .overlay-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 3;
+  top: 100px;
+}
+
+/* Quando o mouse passa, mostra o conteúdo */
+.video:hover .overlay-content {
+  opacity: 1;
+}
+
+/* --- BOTÃO --- */
+.video .overlay-content .btn {
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arvo, serif;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  text-shadow: 0 1px 1px #6366e0;
+  transition: all .3s ease;
+  vertical-align: middle;
+  border-radius: 20px !important;
+  padding: 15px 0 !important;
+  text-transform: uppercase;
+  width: 250px;
+  height: 60px;
+  opacity: 0;
+  z-index: 2; /* botão acima do p */
+  transform: translateY(30px);
+}
+
+/* botão aparece primeiro */
+.video:hover .overlay-content .btn {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s; /* aparece imediatamente */
+}
+/* imagem coraçao */
+.video .overlay-content img {
+  width: 60px;
+  height: auto;
+  position: relative;
+  z-index: 3;
+  top: 24px;
+  opacity: 0; /* começa invisível */
+  transform: translateY(20px); /* começa um pouco abaixo */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.video:hover .overlay-content img {
+  opacity: 1; /* fica visível */
+  transform: translateY(0); /* sobe para posição final */
+  transition-delay: 0.6s; /* espera 0.6s antes de iniciar */
+}
+
+/* --- TEXTO (p) --- */
+.video .overlay-content p {
+  position: relative;
+  z-index: 1;
+  padding: 10px 30px;
+  width: 120px;
+  background-color: #ffffffe6;
+  color: #50C878;
+  font-weight: bold;
+  font-size: 12px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  opacity: 0;
+  transform: translateY(40px); /* começa mais embaixo */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  margin-bottom: -2px;
+}
+
+/* texto aparece depois com atraso e sobe */
+.video:hover .overlay-content p {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s; /* espera 0.3s após o botão */
+}
+
+/* Cores específicas de cada botão */
+.jogar-escola { background: linear-gradient(0deg, #dd064d 0%, #ff568a 100%);}
+.jogar-faculdade { background: linear-gradient(0deg, #444996 0%, #5f65be 100%);; }
+.jogar-adulta { background: linear-gradient(0deg, #219ca9 0%, #28b7c6 100%); }
+.jogar-alternativa { background: linear-gradient(0deg, #6366e0 0%, #979ffb 100%); }
+
+.s1 .overlay-content p {color: #dd064d;}
+.s2 .overlay-content p {color: #444996;}
+.s3 .overlay-content p {color: #219ca9;}
+.s4 .overlay-content p {color: #6366e0;}
 
 .log {
   position: absolute;
