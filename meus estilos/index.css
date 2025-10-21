@@ -166,6 +166,7 @@ main .video {
     flex: 1; 
     height: 100%;
     position: relative;
+    overflow: hidden;
 }
 
 /* As imagens se adaptam ao container */
@@ -174,6 +175,21 @@ main .video img {
     height: 100%;
     object-fit: cover; /* garante que a imagem preencha sem distorcer */
     display: block;
+}
+
+/* Overlay transparente */
+.video::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.4); /* camada esbranquiçada */
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+/* Quando o mouse passa por cima, o overlay some */
+.video:hover::before {
+  opacity: 0;
 }
 
 main .container .video {
@@ -188,6 +204,8 @@ main .container .video .logo {
   width: 250px; /* ajuste esse tamanho como quiser */
   height: auto;
   z-index: 2;
+
+  max-width: 60%;
 }
 
 .log {
